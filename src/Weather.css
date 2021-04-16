@@ -1,0 +1,25 @@
+li {
+  list-style: none;
+}
+.mainTemperature {
+  font-size: 40px;
+}
+.icon {
+  font-size: 55px;
+}
+.day {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.tempType {
+  font-size: 16px;
+  position: relative;
+  top: -15px;
+}
+
+.celsius,
+.fahrenheit {
+  text-decoration: none;
+  color: #484649;
+}
