@@ -21,7 +21,7 @@ export default function Weather() {
         </li>
         <li id="description">Windy</li>
         <div class="col">
-          <img className="icon" id="weatherIcon" />
+          <img className="icon" id="weatherIcon" alt="icon"/>
         </div>
         <div className="col">
           <li>
