@@ -3,7 +3,6 @@ import Search from "./Search";
 import City from "./City";
 import Weather from "./Weather";
 import Forecast from "./Forecast";
-import Footer from "./Footer";
 import "./App.css";
 import background from "./pinkclouds.png";
 
@@ -18,7 +17,12 @@ export default function App() {
           <hr />
           <Forecast />
         </div>
-        <Footer />
+          <footer>
+            <a href="https://github.com/amanda-ferg/React-Weather" class="link">
+              Open-source code
+            </a> 
+              {" "} by Amanda Ferg
+            </footer>
       </div>
     </div>
   );
