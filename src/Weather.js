@@ -4,24 +4,25 @@ import "./Weather.css";
 export default function Weather() {
   return (
     <div className="row">
-      <div className="col">
-        <li>
-          <span className="mainTemperature" id="temperature">
-            27
-          </span>
-          <span className="tempType">
-            <a href="/" className="celsius" id="celsiusLink">
-              °C
-            </a>
-            |
-            <a href="/" className="fahrenheit" id="fahrenheitLink">
-              °F
-            </a>
-          </span>
-        </li>
-        <li id="description">Windy</li>
+        <div className="col">
+            <li>
+                <span className="mainTemperature" id="temperature">
+                    27
+                </span>
+                <span className="tempType">
+                <a href="/" className="celsius" id="celsiusLink">
+                    °C
+                 </a>
+                    |
+                <a href="/" className="fahrenheit" id="fahrenheitLink">
+                    °F
+                </a>
+                </span>
+            </li>
+            <li id="description">Windy</li>
+        </div>
         <div class="col">
-          <img className="icon" id="weatherIcon" alt="icon"/>
+          <img className="icon" id="weatherIcon" alt=""/>
         </div>
         <div className="col">
           <li>
@@ -31,7 +32,6 @@ export default function Weather() {
             Wind: <span id="wind"></span> km/h
           </li>
         </div>
-      </div>
     </div>
   );
 }
