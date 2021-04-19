@@ -10,14 +10,16 @@ import background from "./pinkclouds.png";
 export default function App() {
   return (
     <div className="App">
-      <div className="box" style={{ backgroundImage: `url(${background})` }}>
-        <Search />
-        <City />
-        <Weather />
-        <hr />
-        <Forecast />
+      <div className="container">
+        <div className="box" style={{ backgroundImage: `url(${background})` }}>
+          <Search />
+          <City />
+          <Weather />
+          <hr />
+          <Forecast />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
