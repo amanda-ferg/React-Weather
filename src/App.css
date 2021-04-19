@@ -13,6 +13,14 @@
   background-position: center;
 }
 
+h1,
+h2 {
+  margin: 5px 5px 5px 20px;
+}
+h1 {
+  font-size: 55px !important;
+}
+
 footer {
   text-decoration: none;
   color: #484649;

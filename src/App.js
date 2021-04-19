@@ -1,6 +1,4 @@
 import React from "react";
-import Search from "./Search";
-import City from "./City";
 import Weather from "./Weather";
 import Forecast from "./Forecast";
 import "./App.css";
@@ -11,8 +9,6 @@ export default function App() {
     <div className="App">
       <div className="container">
         <div className="box" style={{ backgroundImage: `url(${background})` }}>
-          <Search />
-          <City />
           <Weather />
           <hr />
           <Forecast />
@@ -20,9 +16,9 @@ export default function App() {
           <footer>
             <a href="https://github.com/amanda-ferg/React-Weather" class="link">
               Open-source code
-            </a> 
+            </a>
               {" "} by Amanda Ferg
-            </footer>
+          </footer>
       </div>
     </div>
   );
