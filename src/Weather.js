@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import CurrentDate from "./CurrentDate";
 import "./Weather.css";
 
 export default function Search() {
@@ -13,7 +14,7 @@ let [city, setCity] = useState("");
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      date: "Friday 10:00",
+      date: new Date(response.data.dt * 1000),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       });
     }
@@ -50,7 +51,7 @@ let [city, setCity] = useState("");
             </form>
         </div>
         <h1>{city}</h1>
-        <h2>Friday 10:00</h2>
+        <h2><CurrentDate date={weatherData.date} /></h2>
         <div className="row">
             <div className="col">
                 <li>
