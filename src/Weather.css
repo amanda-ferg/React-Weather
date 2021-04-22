@@ -23,3 +23,8 @@ canvas {
   text-decoration: none;
   color: #484649;
 }
+
+.celsius:hover,
+.fahrenheit:hover {
+  text-decoration: none;
+}
