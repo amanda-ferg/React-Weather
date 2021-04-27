@@ -22,45 +22,60 @@ let [city, setCity] = useState(props.defaultCity);
       });
     }
 
-function search() {
-    const apiKey = `523153ffc9ade9361b141e46da936c85`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeather);
-}
+    function search() {
+        const apiKey = `523153ffc9ade9361b141e46da936c85`;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(displayWeather);
+    }
 
-function handleSubmit(event) {
-    event.preventDefault();
-    search();
-}
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
 
-  function updateCity(event) {
-    setCity(event.target.value);
+    function updateCity(event) {
+        setCity(event.target.value);
+    }
+
+    function getCurrentLocation(position) {
+        const apiKey = `523153ffc9ade9361b141e46da936c85`;
+        let units = "metric";
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let apiGeoUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+        axios.get(apiGeoUrl).then(displayWeather);
   }
 
- if (weatherData.ready) {
-  return(
-    <div className="searchCity">
-            <form id="search-form" onSubmit={handleSubmit}>
-                <input
-                    type="search" 
-                    placeholder="Search Your City"
-                    autoComplete="off"
-                    autoFocus="on"
-                    id="search-input-text"
-                    onChange={updateCity}
-                />
-                <input type="submit" value="Search" id="search" />
-                <button id="locationButton">
-                    <i className="fas fa-location-arrow"></i>
-                </button>
-            </form>
-            <WeatherDisplay data={weatherData}/>
-            <hr />
-            <WeatherForecast coordinates={weatherData.coordinates}/>
-    </div>
-  );
- } else {
-     search();
-     return "Loading..."
- }
+    function getGeolocation(event) {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(getCurrentLocation);
+    }
+
+    if (weatherData.ready) {
+    return(
+        <div className="searchCity">
+                <form id="search-form" onSubmit={handleSubmit}>
+                    <input
+                        type="search" 
+                        placeholder="Search Your City"
+                        autoComplete="off"
+                        autoFocus="on"
+                        id="search-input-text"
+                        onChange={updateCity}
+                    />
+                    <input type="submit" value="Search" id="search" />
+                    <button className="locationButton"
+                            onClick={getGeolocation}>
+                        <i className="fas fa-location-arrow"></i>
+                    </button>
+                </form>
+                <WeatherDisplay data={weatherData}/>
+                <hr />
+                <WeatherForecast coordinates={weatherData.coordinates}/>
+        </div>
+    );
+    } else {
+        search();
+        return "Loading..."
+    }
 }
