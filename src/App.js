@@ -1,6 +1,5 @@
 import React from "react";
 import Weather from "./Weather";
-import Forecast from "./Forecast";
 import "./App.css";
 import background from "./pinkclouds.png";
 
@@ -10,8 +9,6 @@ export default function App() {
       <div className="container">
         <div className="box" style={{ backgroundImage: `url(${background})` }}>
           <Weather defaultCity="Atlanta"/>
-          <hr />
-          <Forecast />
         </div>
           <footer>
             <a href="https://github.com/amanda-ferg/React-Weather" class="link">
