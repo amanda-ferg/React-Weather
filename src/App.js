@@ -11,10 +11,12 @@ export default function App() {
           <Weather defaultCity="Atlanta"/>
         </div>
           <footer>
-            <a href="https://github.com/amanda-ferg/React-Weather" class="link">
+            <a href="https://github.com/amanda-ferg/React-Weather" className="link">
               Open-source code
             </a>
-              {" "} by Amanda Ferg
+              {" "} by <a href="https://www.linkedin.com/in/amanda-ferg-01b263204/" className="link">
+              Amanda Ferg
+            </a>
           </footer>
       </div>
     </div>
