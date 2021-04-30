@@ -70,7 +70,7 @@ const [unit, setUnit] = useState("celsius");
                         <i className="fas fa-location-arrow"></i>
                     </button>
                 </form>
-                <WeatherDisplay data={weatherData}/>
+                <WeatherDisplay data={weatherData} unit={unit} setUnit={setUnit} />
                 <hr />
                 <WeatherForecast coordinates={weatherData.coordinates}/>
         </div>
