@@ -11,7 +11,7 @@ export default function WeatherDisplay(props) {
             <div className="row">
                 <div className="col">
                     <li>
-                        <WeatherTemperature celsius={props.data.temperature}/>
+                        <WeatherTemperature celsius={props.data.temperature} unit={props.unit} setUnit={props.setUnit}/>
                     </li>
                     <li className="text-capitalize">{props.data.description}</li>
                 </div>

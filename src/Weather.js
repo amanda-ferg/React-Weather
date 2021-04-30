@@ -7,6 +7,7 @@ import "./Weather.css";
 export default function Search(props) {
 let [weatherData, setWeatherData] = useState({ ready: false});
 let [city, setCity] = useState(props.defaultCity);
+const [unit, setUnit] = useState("celsius");
 
     function displayWeather(response){
       setWeatherData({
