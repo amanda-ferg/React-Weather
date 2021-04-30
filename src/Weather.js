@@ -72,7 +72,8 @@ const [unit, setUnit] = useState("celsius");
                 </form>
                 <WeatherDisplay data={weatherData} unit={unit} setUnit={setUnit} />
                 <hr />
-                <WeatherForecast coordinates={weatherData.coordinates}/>
+                <WeatherForecast coordinates={weatherData.coordinates}
+                                 unit={unit} setUnit={setUnit} />
         </div>
     );
     } else {

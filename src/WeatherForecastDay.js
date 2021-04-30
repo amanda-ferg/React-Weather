@@ -32,7 +32,7 @@ export default function WeatherForecastDay(props) {
         return `${temperature}`;
     }
 
-  function minTemperatureFarhenheit() {
+  function minTemperatureFahrenheit() {
         let temperature = Math.round((props.data.temp.min * 9) / 5 + 32);
         return `${temperature}`;    
     }
@@ -43,7 +43,7 @@ export default function WeatherForecastDay(props) {
                 <li>{day()}</li>
                 <li><WeatherIcon code={props.data.weather[0].icon} size={36} /></li>
                 <li><strong>High: {maxTemperatureFahrenheit()}°</strong></li>
-                <li>Low: {minTemperatureFarhenheit()}°</li>
+                <li>Low: {minTemperatureFahrenheit()}°</li>
             </div>
         );
     } else {
